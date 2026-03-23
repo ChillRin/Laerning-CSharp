@@ -41,35 +41,160 @@ class Program
         //S2.27. Известно значение температуры по шкале Цельсия. Найти соответствующее  значение температуры по шкале: а) Фаренгейта; б) Кельвина. Для пересчета по шкале Фаренгейта необходимо исходное значение температуры умножить на 1,8 и к результату прибавить 32, а по шкале Кельвина абсолютное значение нуля соответствует 273,15 градуса по шкале Цельсия.
         //S2.28. У американского писателя-фантаста Рэя Бредбери есть роман «450 градусов  по Фаренгейту». Какой температуре по шкале Цельсия соответствует указанное в названии значение? (См. предыдущую задачу).
     
-        
-        Console.Write("Введите любое значение числа X = ");
-        float X = float.Parse(Console.ReadLine());
+        /*
 
-        Console.WriteLine("S2.1 - Результаты вычесления чила Y по формулам при числе X = {0}:", X);
-        Console.WriteLine("S2.1 - y = 7x^2 + 3x + 6 = {0}", 7 * (X * X) + 3 * X + 6);
-        Console.WriteLine("S2.1 - y = 12x^2 + 7x + 12 = {0}", 12 * (X * X) + 7 * X + 12);
-
-        Console.Write("Введите любое значение стороны квадрата >> ");
-        float squareEdge = float.Parse(Console.ReadLine());
-        Console.WriteLine("S2.2 - Периметр квадрата при длинне стороны {0}, равен {1}", squareEdge, squareEdge * 4);
-
-
-        Console.Write("Введите любое значение радиуса круга >> ");
-        float circleRadius = float.Parse(Console.ReadLine());
-        Console.WriteLine("S2.3 - Диаметр окружности при радиусе {0}, равен {1}", circleRadius, circleRadius * 2);
 
         // S2.5
-        Console.Write("Введите длину ребра куба >> ");
-        float cubeEdge = float.Parse(Console.ReadLine());
-        Console.WriteLine("S2.5 - Объем куба при длине грани {0}, равен {1}, а пложадь боковой поверхности {2}", cubeEdge, cubeEdge * cubeEdge * cubeEdge, 4 * (cubeEdge * cubeEdge));
 
         //S2.6 Дан радиус окружности. Найти длину окружности и площадь круга.
-        Console.Write("Введите произвольный радиус окружности >> ");
-        circleRadius = float.Parse(Console.ReadLine());
-        Console.WriteLine("S2.6 - При радиусе круга {0}, его длина окружности равна {1}, а площадь {2}", circleRadius_2, Math.Truncate( 2 * Math.PI * circleRadius_2 * 10) / 10, Math.Truncate((Math.PI * (circleRadius_2 * circleRadius_2)) * 10) / 10);
     
         //S2.7. Даны два целых числа. Найти: 
         //  а) их среднее арифметическое; 
         //  б) их среднее геометрическое.
+        */
+
+        bool work = true;
+        while(work) {
+            Console.WriteLine("\nВыберите вариант работы из списка:");
+            Console.WriteLine("1. вычисления значения функции y=7x^2+3x+6 и y=12x^2+7x+12 при любом значении x");
+            Console.WriteLine("2. Найти периметр квадрата по его стороне");
+            Console.WriteLine("3. Найти диаметр круга по его радиусу");
+            Console.WriteLine("4. Найти объем и площадь боковой поверхности куба по значению его ребра");
+            Console.WriteLine("5. Найтидлину и площать окружности по её радиусу");
+            Console.WriteLine("6. Найти среднее орифметическое и геометрическое двух произвольных чисел");
+            Console.WriteLine("7. ");    
+            Console.WriteLine("8. ");
+            Console.WriteLine("9. ");
+            Console.WriteLine("10. ");
+            Console.WriteLine("11. ");
+            Console.WriteLine("12. ");
+            Console.WriteLine("13. ");
+            Console.WriteLine("14. ");
+            Console.WriteLine("15. ");
+            Console.WriteLine("16. ");
+            Console.WriteLine("17. ");
+            Console.WriteLine("18. ");
+            Console.WriteLine("19. ");
+            Console.WriteLine("20. ");
+            Console.WriteLine("21. ");
+            Console.WriteLine("22. ");
+            Console.WriteLine("23. ");
+            Console.WriteLine("24. ");
+            Console.WriteLine("25. ");
+            Console.WriteLine("26. ");
+            Console.WriteLine("27. ");
+            Console.WriteLine("0. Выход");
+            Console.Write("Выбор >> ");
+            string choice = Console.ReadLine();
+
+            int user_choice;
+
+            try
+            {
+               user_choice = int.Parse(choice); 
+            } catch
+            {
+                Console.WriteLine("Не верный ввод! Попробуйте ввести только число");
+                continue;
+            }
+
+            switch(user_choice)
+            {
+                case 1:
+                    FindFunction();
+                    break;
+
+                case 2:
+                    FindSquareByEdge();
+                    break;
+
+                case 3:
+                    FindCircleByRadius();
+                    break;
+
+                case 4:
+                    FindVolumeAndSquareForCubeByEdge();
+                    break;
+                
+                case 5:
+                    FindSquareForCircleByRadius();
+                    break;
+
+                case 6:
+                    FindGeometrycAndAriphmeticThoNums();
+                    break;
+
+                case 0:
+                    work = false;
+                    break;
+            }
+
+        }
+    } 
+
+    static void FindFunction()
+    {
+        Console.Write("\nВведите любое значение числа X = ");
+        float X = float.Parse(Console.ReadLine());
+
+        Console.WriteLine("Результаты вычесления чила Y по формулам при числе X = {0}:", X);
+        Console.WriteLine("y = 7x^2 + 3x + 6 = {0}", 7 * (X * X) + 3 * X + 6);
+        Console.WriteLine("y = 12x^2 + 7x + 12 = {0}", 12 * (X * X) + 7 * X + 12);
+
+    }
+
+    static void FindSquareByEdge()
+    {
+        Console.Write("\nВведите любое значение стороны квадрата >> ");
+        float squareEdge = float.Parse(Console.ReadLine());
+        Console.WriteLine("Периметр квадрата при длинне стороны {0}, равен {1}", squareEdge, squareEdge * 4);
+
+    }
+
+    static void FindCircleByRadius()
+    {
+        Console.Write("\nВведите любое значение радиуса круга >> ");
+        float circleRadius = float.Parse(Console.ReadLine());
+        Console.WriteLine("Диаметр окружности при радиусе {0}, равен {1}", circleRadius, circleRadius * 2);
+
+    }
+
+    static void FindVolumeAndSquareForCubeByEdge()
+    {
+        Console.Write("\nВведите длину ребра куба >> ");
+        float cubeEdge = float.Parse(Console.ReadLine());
+        Console.WriteLine("Объем куба при длине грани {0}, равен {1}, а пложадь боковой поверхности {2}", cubeEdge, cubeEdge * cubeEdge * cubeEdge, 4 * (cubeEdge * cubeEdge));
+    }
+
+    static void FindSquareForCircleByRadius()
+    {
+        Console.Write("\nВведите произвольный радиус окружности >> ");
+        float circleRadius = float.Parse(Console.ReadLine());
+        Console.WriteLine("S2.6 - При радиусе круга {0}, его длина окружности равна {1}, а площадь {2}", circleRadius, Math.Truncate( 2 * Math.PI * circleRadius * 10) / 10, Math.Truncate((Math.PI * (circleRadius * circleRadius)) * 10) / 10);
+
+    }
+
+    static void FindGeometrycAndAriphmeticThoNums()
+    {
+        Console.Write("\nВведите два произвольных числа через пробел >> ");
+        string[] numbers = Console.ReadLine().Split(" ");
+
+        float num1, num2;
+
+        try
+        {
+            num1 = float.Parse(numbers[0]);
+            num2 = float.Parse(numbers[1]);
+        } catch
+        {
+            Console.WriteLine("Не корректный вод!");
+            return;
+        }
+
+        float ariphmetic = (float)((num1 + num2) / 2);
+        float geometryc = (float)(Math.Sqrt((double)(num1 * num2)));
+
+        Console.WriteLine("Среднее арифметическое равно {0}", ariphmetic);
+        Console.WriteLine("Среднее геометрическое равно {0}", geometryc);
     }
 }

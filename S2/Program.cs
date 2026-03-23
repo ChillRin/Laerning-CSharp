@@ -58,9 +58,18 @@ class Program
         float circleRadius = float.Parse(Console.ReadLine());
         Console.WriteLine("S2.3 - Диаметр окружности при радиусе {0}, равен {1}", circleRadius, circleRadius * 2);
 
+        // S2.5
         Console.Write("Введите длину ребра куба >> ");
         float cubeEdge = float.Parse(Console.ReadLine());
-        Console.WriteLine("S2.4 - Объем куба при длине грани {0}, равен {1}, а пложадь боковой поверхности {2}", cubeEdge, cubeEdge * cubeEdge * cubeEdge, 4 * (cubeEdge * cubeEdge));
+        Console.WriteLine("S2.5 - Объем куба при длине грани {0}, равен {1}, а пложадь боковой поверхности {2}", cubeEdge, cubeEdge * cubeEdge * cubeEdge, 4 * (cubeEdge * cubeEdge));
 
+        //S2.6 Дан радиус окружности. Найти длину окружности и площадь круга.
+        Console.Write("Введите произвольный радиус окружности >> ");
+        circleRadius = float.Parse(Console.ReadLine());
+        Console.WriteLine("S2.6 - При радиусе круга {0}, его длина окружности равна {1}, а площадь {2}", circleRadius_2, Math.Truncate( 2 * Math.PI * circleRadius_2 * 10) / 10, Math.Truncate((Math.PI * (circleRadius_2 * circleRadius_2)) * 10) / 10);
+    
+        //S2.7. Даны два целых числа. Найти: 
+        //  а) их среднее арифметическое; 
+        //  б) их среднее геометрическое.
     }
 }
